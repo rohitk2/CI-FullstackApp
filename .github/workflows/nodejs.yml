@@ -30,9 +30,9 @@ jobs:
         run: npm install
 
       # Run the tests.
-      - name: Install Dependencies
-        run: npm install
-        continue-on-error: True
+      - name: Run Tests
+        run: npm test
+        continue-on-error: true
 
       # Run the linter.
       - name: Run Linter
@@ -40,6 +40,5 @@ jobs:
 
       # Send a console message at completion.
       - name: Console Message
-      - run: |
-          "Hello [username of the user who initiated the run]. You pushed to [repository_name] at $(date)."."
-
+        run: |
+          echo "Hello [username of the user who initiated the run]. You pushed to [repository_name] at $(date)."
